@@ -106,3 +106,5 @@ main:
     move.b (A0), D0
     add.b #5, D0
     move.b D0, (A0)
+
+end:
