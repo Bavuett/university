@@ -8,7 +8,6 @@
 ; ESSERE TRADOTTE CON MENO RIGHE. PREFERISCO ESSERE CHIARO.
 
 org $1000
-
 ; Il programma dichiara le seguenti variabili esterne
 
 ; • tipo int: a inizializzata a 7, b inizializzata a -5
