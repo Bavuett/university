@@ -29,7 +29,7 @@
 
         sub.w d0, d1        ; Effettuiamo l'operazione Valore di Ritorno - 100 (d1 = (sp)+ - 100).
         
-        muls #2, d0         ; Effettuiamo l'operazione (2 *x) (d0 = d0 * 2).
+        muls #2, d0         ; Effettuiamo l'operazione (2 * x) (d0 = d0 * 2).
         add.w #1, d0        ; Effettuiamo l'operazione (2 * x) + 1 (d0 = d0 + 1).
 
         muls d1, d0         ; Effettuiamo l'operazione ((100 - f(x/5)) - (2 * x + 1)) (d0 = d0 * d1).

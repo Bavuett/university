@@ -59,3 +59,28 @@
 ;     return 0;
 ; }
 
+org $1000
+
+v3: 
+    dc.w 27
+v2: 
+    dc.w 0
+v1: 
+    dc.w 0
+
+res1: 
+    dc.l 0
+res2: 
+    dc.l 0
+
+org $2000
+
+main: 
+    lea v3, a0
+    lea v2, a1
+    lea v1, a2
+
+    
+
+
+end:
