@@ -31,6 +31,15 @@ public class VettoreOrdinabile<T extends Comparable<? super T>> {
     }
 
     public void sort() {
-        
+        int s, i, j, num = this.currentDimension;
+        T temp;
+
+        for (s = num / 2; s > 0; s /= 2) {
+            for (i = s; i < num; i++) {
+                for (j = i - s; j >= 0; j -= s) {
+                    
+                }
+            }
+        }
     }
 }
