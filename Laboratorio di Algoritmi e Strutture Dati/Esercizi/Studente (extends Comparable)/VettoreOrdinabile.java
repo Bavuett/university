@@ -37,7 +37,11 @@ public class VettoreOrdinabile<T extends Comparable<? super T>> {
         for (s = num / 2; s > 0; s /= 2) {
             for (i = s; i < num; i++) {
                 for (j = i - s; j >= 0; j -= s) {
-                    
+                    if ((T)array[j]).compareTo((T)array[j + s]) {
+                        temp = (T)(array[j]);
+                        array[j] = array[j + s];
+                        array[j + s] = temp;
+                    }
                 }
             }
         }
