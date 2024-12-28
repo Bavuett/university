@@ -30,13 +30,11 @@ int main(void) {
 
     err = pthread_join(tid1, &tret1);
     if (err != 0) printf("Can't join with thread 1");
-
-    printf("First thread joined.\n");
+    else printf("First thread joined.\n");
 
     err = pthread_join(tid2, &tret2);
     if (err != 0) printf("Can't join with thread 2");
-
-    printf("Second thread joined.\n");
+    else printf("Second thread joined.\n");
 
     printf("Final result %ld\n", (long) tret1 + (long) tret2);
 }
