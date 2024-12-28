@@ -31,15 +31,13 @@ int main(void) {
 
     err = pthread_join(th1, NULL);
     if (err != 0) printf("Can't join with thread 1");
-    else printf("First thread joined!");
+    else printf("First thread joined!\n");
 
     err = pthread_join(th2, NULL);
     if (err != 0) printf("Can't join with thread 2");
-    else printf("Second thread joined!");
+    else printf("Second thread joined!\n");
 
     for (int i = 0; i < 10; i++) {
         printf("%d\n", ar[i]);
     }
-
-    exit(0);
 }
