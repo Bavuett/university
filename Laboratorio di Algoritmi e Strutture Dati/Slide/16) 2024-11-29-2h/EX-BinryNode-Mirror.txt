@@ -1,0 +1,18 @@
+/****************************************************************************
+ * HOMEWORK
+ * 
+Si aggiunga alla classe BinaryNode<E> un metodo ricorsivo  
+public BinaryNode<E> mirror()
+che dato il nodo corrente restituisce il suo nodo "specchio", ovvero
+il nuovo nodo deve essere radice di un albero binario che è
+immagine speculare dell'albero binario radicato nel nodo corrente: 
+ogni figlio destro di questo sottoalbero diventa sinistro e viceversa. 
+
+  	    public BinaryNode<E> mirror() {
+   	    	BinaryNode<E> l = null, r = null;
+   	    	if (right != null) r = right.mirror();
+  	    	if (left  != null) l = left.mirror();
+   	 		return new BinaryNode<E>(r, data, l);
+   	 	}  // mirror
+   	 	
+*/

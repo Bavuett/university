@@ -1,0 +1,80 @@
+    /******************* ESERCITAZIONE SULLA CLASSE NETWORK *****************/
+    
+    /**
+     *  Add to the NetworkVertex> class a new method that determines if this (directed
+     *  Network object is (strongly) connected. The worstTime(V, E) is O(V * V * log V).
+     *
+     *  @return true - if this (directed) Network object is connected.
+     *
+     */
+    public boolean isConnected()
+    {
+    	for (Vertex v : adjacencyMap.keySet())
+        {
+            // Count the vertices reachable from v.
+            Iterator<Vertex> itr = new BreadthFirstIterator (v);
+            int count = 0;
+            while (itr.hasNext())
+            {
+                itr.next();
+                count++;
+            } // while
+            if (count < adjacencyMap.size())
+                return false;
+        } // for
+        return true;
+    } // method isConnected
+    
+    /*
+     * Esercizio 4 del 10-02-2021 (II appello)
+     * Aggiungere alla classe Network<Vertex extends Comparable<? super Vertex>>
+     * un nuovo metodo public Double getNetWeight(); che restituisce il peso del grafo,
+     * ovvero la somma dei pesi degli archi di questo grafo orientato.
+     */
+        
+        public Double getNetWeight() {
+        	Double weight =0.0;
+        	for (Vertex v: adjacencyMap.keySet()) {
+        		   for (Map.Entry<Vertex, Double> entry : adjacencyMap.get (v).entrySet())
+        			   weight += entry.getValue();
+        	}
+        	return weight;
+        }
+        
+        public Double getNetWeight2() {
+        	Double weight =0.0;
+        	for (Map<Vertex, Double> neighborMap: adjacencyMap.values()) {
+        		for (Double d: neighborMap.values())
+        			   weight += d;
+        	}
+        	return weight;
+        }
+        
+ 
+    	/* EX2 del II parziale del 14/01/2020
+         * Si aggiunga alla classe Network<Vertex> un nuovo metodo costruttore
+         * public Network(Double[][] AdjMatrix, Vertex[] V)
+         * che generi una network come nuova rappresentazione di un digrafo rappresentato
+         * mediante la matrice di adiacenza AdjMatrix: AdjMatrix[i][j] = d != null
+         * (per qualche Double d) sse nel digrafo esiste un arco da
+         * V[i] a V[j] con peso d.
+         */
+        
+        public Network(Double[][] AdjMatrix, Vertex[] V) {
+        	adjacencyMap = new TreeMap<Vertex, TreeMap<Vertex, Double>>();
+        	if (AdjMatrix.length != V.length) return; 
+        	//inserimento vertici
+        	for (int i=0; i < V.length; i++) 
+        		adjacencyMap.put (V[i], new TreeMap<Vertex, Double>());   //addVertex(V[i]);
+        	//inserimento archi
+        	for (int i=0; i < AdjMatrix.length; i++) {
+        		TreeMap<Vertex, Double> neighborMap = adjacencyMap.get (V[i]);       
+        		for (int j=0; j < AdjMatrix[i].length; j++) {
+        			if (AdjMatrix[i][j]!=null && j <= V.length) {
+        				//addEdge(V[i],V[j],AdjMatrix[i][j]); 
+        		        neighborMap.put (V[j], AdjMatrix[i][j]);
+        			}
+        		}
+        	}
+        	
+        }
