@@ -14,8 +14,8 @@ public class UndirectedNetwork {
     // Difatti, creiamo due vertici come nel metodo classico. Sfrutteremo poi il fatto che la HashMap consente
     // ha due Vertici, come nella dichiarazione fatta sopra, per connetterli a vicenda. 
     public void addEdge(Vertex vertex1, Vertex vertex2, int weight) {
-        this.adjacencyMap.put(vertex1, new HashMap<>());
-        this.adjacencyMap.put(vertex2, new HashMap<>());
+        this.adjacencyMap.putIfAbsent(vertex1, new HashMap<>());
+        this.adjacencyMap.putIfAbsent(vertex2, new HashMap<>());
         this.adjacencyMap.get(vertex1).put(vertex2, weight);
         this.adjacencyMap.get(vertex2).put(vertex1, weight);
     }
