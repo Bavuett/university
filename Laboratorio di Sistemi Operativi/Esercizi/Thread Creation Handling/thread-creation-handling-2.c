@@ -9,8 +9,6 @@ typedef struct {
 void *incrsum(void *arg) {
     for (int i = 0; i < ((subarray *) arg)->n; i++) {
         ((subarray *) arg)->ar[i] = ((subarray *) arg)->ar[i] + i;
-
-        return ((void *) 0);   // Alias di NULL
     }
 }
 
@@ -40,4 +38,6 @@ int main(void) {
     for (int i = 0; i < 10; i++) {
         printf("%d\n", ar[i]);
     }
+
+    return 0;
 }

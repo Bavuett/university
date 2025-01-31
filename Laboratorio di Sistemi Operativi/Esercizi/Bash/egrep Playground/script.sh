@@ -1,0 +1,1 @@
+egrep -e "[abc]]" file.txt > temp.txt && tail -3 < temp.txt | tee result.txt && sed "s/]/iao/g" result.txt

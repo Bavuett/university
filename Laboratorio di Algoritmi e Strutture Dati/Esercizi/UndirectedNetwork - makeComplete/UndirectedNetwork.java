@@ -20,7 +20,7 @@ public class UndirectedNetwork {
         this.adjacencyMap.get(vertex2).put(vertex1, weight);
     }
 
-    public void makeComplete(Vertex vertex1, Vertex vertex2) {
+    public void makeComplete() {
         List<Vertex> vertices = new ArrayList<>();
 
         for (Vertex vertex: this.adjacencyMap.keySet()) {
